@@ -26,5 +26,5 @@ db.on('connected', function (err) {
 // TO HANDLE ERRORS DURING THE RUNTIME //////////
 db.on('error', err => {
     logError(err);
-  });
+});
 
