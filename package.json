@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LAbeast021/NOVA.git"
+    "url": "git+https://github.com/LAbeast021/classicbox.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LAbeast021/NOVA/issues"
+    "url": "https://github.com/LAbeast021/ClassicBox/issues"
   },
-  "homepage": "https://github.com/LAbeast021/NOVA#readme",
+  "homepage": "https://github.com/LAbeast021/ClassicBox#readme",
   "dependencies": {
     "cloudinary": "^1.35.0",
     "cookie-parser": "^1.4.6",
