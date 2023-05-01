@@ -13,7 +13,6 @@ var commentSchema = new Schema ({
 var postSchema = new Schema({
     image: String,
     ratin: Number,
-    ratinArray: [ratingSchema],
     likes:[],
     caption: String,
     userId: String,
