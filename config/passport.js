@@ -36,13 +36,13 @@ passport.use(new GoogleStrategy({
     })
     }));
     // LOGING IN USING FACEBOOK //////////
-    // passport.use(new FacebookStrategy({
-    //   clientID: FACEBOOK_APP_ID,
-    //   clientSecret: FACEBOOK_APP_SECRET,
-    //   callbackURL: "http://localhost:3000/authcallback",
-    //   enableProof: true, 
-    //   profileFields: ['id', 'displayName', 'photos', 'email']
-    // }))
+    passport.use(new FacebookStrategy({
+      clientID: process.env.FACEBOOK_APP_ID,
+      clientSecret: process.env.FACEBOOK_APP_SECRET,
+      callbackURL: process.env.FACEBOOK_CALLBACK,
+      enableProof: true, 
+      profileFields: ['id', 'displayName', 'photos', 'email']
+    }))
 
     
     // ////////  NOT SURE WHAT IT DOES BUT I THINK THEY SET THE USER KEY IN REQ OBJECT ////////////// 
