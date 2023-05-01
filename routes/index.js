@@ -14,12 +14,17 @@ router.get('/auth/google',passport.authenticate(
     scope: ['profile','email']
   }
 ));
-router.get('/auth/facebook',passport.authenticate(
-  'facebook',
-  {
-    scope: ['profile','email']
-  }
-));
+// router.get('/auth/facebook',passport.authenticate(
+//   'facebook',
+//   {
+//     scope: ['profile','email']
+//   }
+// ));
+router.get('/auth/facebook', passport.authenticate(
+  'facebook', 
+  { authType: 'reauthenticate', 
+    scope: ['user_friends', 'manage_pages'] 
+  }));
 
   // router.get('/oauth2callback', passport.authenticate(
   //   'google',
@@ -30,8 +35,14 @@ router.get('/auth/facebook',passport.authenticate(
   // ));
 
 
-  router.get('/oauth2callback', 
+  router.get('/Googleauthcallback', 
   passport.authenticate('google', { failureRedirect: '/' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect(`/users/profile/${req.user.id}`);
+  });
+  router.get('/Facebookauthcallback', 
+  passport.authenticate('facebook', { failureRedirect: '/' }),
   function(req, res) {
     // Successful authentication, redirect home.
     res.redirect(`/users/profile/${req.user.id}`);
