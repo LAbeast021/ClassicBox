@@ -4,10 +4,12 @@
 
 var passport = require('passport');
 var GoogleStrategy = require( 'passport-google-oauth20' ).Strategy;
+var FacebookStrategy = require('passport-facebook');
 var User = require('../models/user');
 var mongoose = require('mongoose');
 const user = require('../models/user');
 
+// LOGING IN USING GOOGLE //////////
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
@@ -33,6 +35,10 @@ passport.use(new GoogleStrategy({
         }
     })
     }));
+    // LOGING IN USING FACEBOOK //////////
+    passport.use(new FacebookStrategy({
+      
+    }))
 
     
     // ////////  NOT SURE WHAT IT DOES BUT I THINK THEY SET THE USER KEY IN REQ OBJECT ////////////// 

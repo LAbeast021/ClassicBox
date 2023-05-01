@@ -5,11 +5,17 @@ var mongoose = require('mongoose')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'NOVA' });
+  res.render('index', { title: 'ClassicBox' });
 });
 
 router.get('/auth/google',passport.authenticate(
   'google',
+  {
+    scope: ['profile','email']
+  }
+));
+router.get('/auth/facebook',passport.authenticate(
+  'facebook',
   {
     scope: ['profile','email']
   }
