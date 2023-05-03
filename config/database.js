@@ -15,7 +15,8 @@ const mongoose = require('mongoose');
 
 
 // CONNECTING TO DATABASE AND HANDLING ANY INITIAL ERRORS //////////
-mongoose.connect(process.env.DATABASE_URL).catch(error => handleError(error));
+mongoose.connect(process.env.DATABASE_URL).catch(error => console.log(error ,"<-------- ERROR FROM DATABASE 1"));
+// mongoose.connect(process.env.DATABASE_URL);
 
  // TO CHECK WE ARE CONNECTED AND WHERE WE ARE CONNECTED TO //////////
 var db = mongoose.connection;
@@ -25,6 +26,7 @@ db.on('connected', function (err) {
 
 // TO HANDLE ERRORS DURING THE RUNTIME //////////
 db.on('error', err => {
-    logError(err);
+    // logError(err);
+    console.log(err ,"<-------- ERROR FROM DATABASE 2");
 });
 

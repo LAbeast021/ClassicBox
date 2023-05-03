@@ -4,7 +4,7 @@
 
 var passport = require('passport');
 var GoogleStrategy = require( 'passport-google-oauth20' ).Strategy;
-var FacebookStrategy = require('passport-facebook');
+var FacebookStrategy = require('passport-facebook').Strategy;
 var User = require('../models/user');
 var mongoose = require('mongoose');
 const user = require('../models/user');
@@ -41,7 +41,9 @@ passport.use(new GoogleStrategy({
       clientSecret: process.env.FACEBOOK_APP_SECRET,
       callbackURL: process.env.FACEBOOK_CALLBACK,
       enableProof: true, 
-      profileFields: ['id', 'displayName', 'photos', 'email']
+    },async function (accessToken, refreshToken, profile, cb){
+      console.log("IN PROFILE FACEBOOKEEE ---------------------------->>>>>>>>>>>>>>>",profile,"<-----------------------------------------------");
+      cb(null, profile);
     }))
 
     

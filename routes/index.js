@@ -23,7 +23,6 @@ router.get('/auth/google',passport.authenticate(
 router.get('/auth/facebook', passport.authenticate(
   'facebook', 
   { authType: 'reauthenticate', 
-    scope: ['user_friends', 'manage_pages'] 
   }));
 
   // router.get('/oauth2callback', passport.authenticate(
